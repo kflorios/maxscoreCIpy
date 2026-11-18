@@ -72,7 +72,9 @@ MaxScoreEstimator(bounds=(-10.0, 10.0), n_starts=3, seed=None)
 ### `ReshapedBootstrap`
 
 Implements the Cattaneo, Jansson, and Nagasawa (2020) Reshaped Bootstrap for cube-root ($n^{1/3}$) consistent Maximum Score inference. In each bootstrap replication, it maximizes the reshaped objective function incorporating the analytical plug-in Hessian quadratic centering term:
-$\tilde{M}_n^*(\gamma) = M_n^*(\gamma) - M_n(\gamma) + \frac{1}{2} (\gamma - \hat{\gamma})^T \tilde{H} (\gamma - \hat{\gamma})$
+$$
+\tilde{M}_n^*(\gamma) = M_n^*(\gamma) - M_n(\gamma) + \frac{1}{2} (\gamma - \hat{\gamma})^T \tilde{H} (\gamma - \hat{\gamma})
+$$
 
 #### Initialization Arguments
 ```python
