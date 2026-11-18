@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "maxscoreCIpy"
-version = "0.6.0"
+version = "0.7.0"
 description = "Cattaneo et al. (2020) Reshaped Bootstrap & Plug-in Hessian with fixed beta_1=1, unified bandwidth, and multi-start optimization"
 readme = "README.md"
 requires-python = ">=3.8"
