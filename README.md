@@ -4,6 +4,8 @@ Python implementation of Manski's Maximum Score Estimator with **fixed $\beta_1 
 
 ## Installation
 
+This package requires Python 3.8 or higher (`>=3.8`).
+
 ```bash
 pip install -e .
 ```
