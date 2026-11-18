@@ -38,7 +38,7 @@ H_plugin = hessian_calc.estimate(beta_hat, X, Y)
 print("Analytical Plug-in Hessian Matrix:\n", H_plugin)
 
 # 3. Reshaped Bootstrap Confidence Intervals
-boot = ReshapedBootstrap(B=50, bandwidth=0.3, local_window=2.0, n_starts=3, seed=42)
+boot = ReshapedBootstrap(B=50, bandwidth=0.3, n_starts=3, seed=42)
 boot_estimates = boot.fit_bootstrap(X, Y, beta_hat)
 ci_95 = boot.confidence_intervals(beta_hat, boot_estimates, alpha=0.05)
 print("95% Confidence Intervals:\n", ci_95)
@@ -74,9 +74,7 @@ MaxScoreEstimator(bounds=(-10.0, 10.0), n_starts=3, seed=None)
 ### `ReshapedBootstrap`
 
 Implements the Cattaneo, Jansson, and Nagasawa (2020) Reshaped Bootstrap for cube-root ($n^{1/3}$) consistent Maximum Score inference. In each bootstrap replication, it maximizes the reshaped objective function incorporating the analytical plug-in Hessian quadratic centering term:
-$$
-\tilde{M}_n^*(\gamma) = M_n^*(\gamma) - M_n(\gamma) + \frac{1}{2} (\gamma - \hat{\gamma})^T \tilde{H} (\gamma - \hat{\gamma})
-$$
+$$\tilde{M}_n^*(\gamma) = M_n^*(\gamma) - M_n(\gamma) + \frac{1}{2} (\gamma - \hat{\gamma})^T \tilde{H} (\gamma - \hat{\gamma})$$
 
 #### Initialization Arguments
 ```python
@@ -128,4 +126,4 @@ PluginHessianEstimator(bw=2.0)
 ---
 
 ## Reference
-* Cattaneo, M. D., Jansson, M., & Nagasawa, K. (2020). *Bootstrap-Based Inference for Cube Root Consistent Estimators*. Econometrica, 88(5), 2203–2219.
+* Cattaneo, M. D., Jansson, M., & Nagasawa, K. (2020). *Bootstrap based inference for cube root asymptoticss*. Econometrica, 88(5), 2203–2219.
